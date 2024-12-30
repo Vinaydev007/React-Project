@@ -213,7 +213,14 @@ export default function Main() {
   return (
     <div>
       <Header />
-      <Product Title={Products.title} img={Products.image} price={Products.price}/>
+     {
+      Products.map((products)=>{
+        return(
+           <Product Title={products.title} img={products.image} price={products.price}/>
+        )
+      })
+      
+     }
     </div>
   );
 }
