@@ -211,16 +211,18 @@ let Products = [
 ];
 export default function Main() {
   return (
-    <div>
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", justifyContent: "center" }}>
       <Header />
-     {
-      Products.map((products)=>{
-        return(
-           <Product Title={products.title} img={products.image} price={products.price}/>
-        )
-      })
-      
-     }
+      {Products.map((products) => {
+        return (
+          <Product
+            Title={products.title}
+            img={products.image}
+            price={products.price}
+            key={products.id}
+          />
+        );
+      })}
     </div>
   );
 }
